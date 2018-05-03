@@ -10,7 +10,7 @@ void build() {
 		t[i] = t[i*2]+t[i*2+1];
 }
 
-void modify(int id, int x) {
+void update(int id, int x) {
 	id += n;
 	t[id] = x;
 	id /= 2;
@@ -31,11 +31,11 @@ int query(int l, int r) {
 }
 
 int main() {
-  scanf("%d", &n);
-  for (int i = 0; i < n; ++i) scanf("%d", t + n + i);
-  build();
-  printf("%d\n", query(3, 11));
-  modify(3, 5);
-  printf("%d\n", query(3, 11));
-  return 0;
+	scanf("%d", &n);
+	for (int i = 0; i < n; ++i) scanf("%d", t + n + i);
+	build();
+	printf("%d\n", query(3, 11));
+	update(3, 5);
+	printf("%d\n", query(3, 11));
+	return 0;
 }
