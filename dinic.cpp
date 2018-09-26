@@ -55,11 +55,11 @@ ll dfs(int s, int t, ll f) {
 	return 0ll;
 }
 
-// max flow between nodes s and t (not to be confused with source and sink)
-ll max_flow(int s, int t) {
+// max flow between nodes s and t (
+ll max_flow(int src, int sink) {
 	ll resp = 0ll;
-	while (bfs(s, t))
-		while (ll val = dfs(s, t, inf))
+	while (bfs(src, sink))
+		while (ll val = dfs(src, sink, inf))
 			resp += val;
 	return resp;
 }
